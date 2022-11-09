@@ -1,1 +1,7 @@
+# Config / cache
+.vscode/
+__pycache__/
+.pytest_cache/
+
+# Executables
 *.exe

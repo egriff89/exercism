@@ -1,7 +1,7 @@
 def get_factors(number):
     return [n for n in range(1, number + 1) if number % n == 0]
 
-def raindrops(number):
+def convert(number):
     factors = get_factors(number)
     speak = ''
     if 3 not in factors and 5 not in factors and 7 not in factors:

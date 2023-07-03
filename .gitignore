@@ -1,8 +1,11 @@
 # Config / cache
 .vscode/
+.clj-kondo/
+.lsp/
 __pycache__/
 .pytest_cache/
 node_modules/
+**/_build
 
 # Executables
 *.exe

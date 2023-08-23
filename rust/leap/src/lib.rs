@@ -1,13 +1,11 @@
-pub fn get_rem(year: u64, divisor: u64) -> u64 {
-    return year % divisor;
+pub fn is_div(year: u64, divisor: u64) -> bool {
+    year % divisor == 0
 }
 
 pub fn is_leap_year(year: u64) -> bool {
-    if (get_rem(year, 4) == 0) && (get_rem(year, 100) == 0) && (get_rem(year, 400) == 0) {
-        return true;
+    match year {
+        year if is_div(year, 400) => true,
+        year if !is_div(year, 100) => is_div(year, 4),
+        _ => false
     }
-    else if (get_rem(year, 4) == 0) && (get_rem(year, 100) != 0) {
-        return true;
-    }
-    return false;
 }

@@ -4,9 +4,7 @@
   (map #(- (int %) (int \0)) (str num)))
 
 (defn exp [base power]
-  (loop [total 1 p power]
-   (if (zero? p) total
-    (recur (* total base) (dec p)))))
+  (apply * (repeat power base)))
 
 (defn armstrong? [num]
   (let [digit (explode num) pow (count digit)]

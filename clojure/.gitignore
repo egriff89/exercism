@@ -2,6 +2,7 @@
 */.clj-kondo
 */.cpcache
 */.lein-failures
+*/.lein-repl-history
 */.lsp
 */.nrepl-port
 */target

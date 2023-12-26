@@ -1,5 +1,7 @@
+open Base
+
 (* Generate list from 1 to n *)
-let range n = List.init n succ
+let range n = List.init n ~f:Int.succ
 
 (* Sum list contents *)
 let rec sum_list = function
@@ -11,22 +13,25 @@ let rec sum_list = function
 let rec sq_list = function
   | [] -> 0
   | h :: t ->
-    int_of_float (float_of_int h ** 2. +. float_of_int (sq_list t))
+    let open Float.O in
+    Int.of_float (of_int h ** 2. + of_int (sq_list t))
 ;;
 
 let square_of_sum = function
   | 0 -> 0
-  | x -> int_of_float (float_of_int(sum_list (range x)) ** 2.)
+  | x -> 
+    let open Float.O in
+    Int.of_float (of_int (sum_list (range x)) ** 2.)
 ;;
 
 let sum_of_squares = function
-  | 0 -> 0
   | x ->
     let list = range x in
     match list with
     | [] -> 0
     | h :: t ->
-      int_of_float (float_of_int h ** 2. +. float_of_int (sq_list t))
+      let open Float.O in
+      Int.of_float (of_int h ** 2. + of_int (sq_list t))
     ;;
 ;;
 

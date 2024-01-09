@@ -1,5 +1,5 @@
+use enum_iterator::{all, Sequence};
 use int_enum::IntEnum;
-use enum_iterator::{Sequence, all};
 
 #[repr(u32)]
 #[derive(Debug, PartialEq, Eq, IntEnum, Clone, Copy, Sequence)]
@@ -23,16 +23,16 @@ impl std::fmt::Display for ResistorColor {
 }
 
 pub fn color_to_value(color: ResistorColor) -> u32 {
-    return color.int_value();
+    color.int_value()
 }
 
 pub fn value_to_color_string(value: u32) -> String {
-    return match ResistorColor::from_int(value) {
+    match ResistorColor::from_int(value) {
         Ok(color) => color.to_string(),
-        Err(_) => String::from("value out of range")
+        Err(_) => String::from("value out of range"),
     }
 }
 
 pub fn colors() -> Vec<ResistorColor> {
-    return all::<ResistorColor>().collect::<Vec<ResistorColor>>();
+    all::<ResistorColor>().collect::<Vec<ResistorColor>>()
 }

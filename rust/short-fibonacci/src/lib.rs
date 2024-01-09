@@ -2,14 +2,14 @@ use std::u8;
 
 /// Create an empty vector
 pub fn create_empty() -> Vec<u8> {
-    return vec![]
+    vec![]
 }
 
 /// Create a buffer of `count` zeroes.
 ///
 /// Applications often use buffers when serializing data to send over the network.
 pub fn create_buffer(count: usize) -> Vec<u8> {
-    return vec![0; count]
+    vec![0; count]
 }
 
 /// Create a vector containing the first five elements of the Fibonacci sequence.
@@ -22,8 +22,8 @@ pub fn fibonacci() -> Vec<u8> {
     for i in 0..5 {
         match i {
             i if i <= 1 => v.push(1),
-            _ => v.push(v[i - 2] + v[i - 1])
+            _ => v.push(v[i - 2] + v[i - 1]),
         }
     }
-    return v
+    v
 }

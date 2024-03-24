@@ -9,7 +9,7 @@ let nucleotide_to_char(dna: nucleotide) =
   | G -> 'G'
   | T -> 'T'
 
-let hamming_distance (strand_a: nucleotide list ) (strand_b: nucleotide list) =
+let hamming_distance strand_a strand_b =
   match List.is_empty strand_a, List.is_empty strand_b with
   | (true, true) -> Ok 0
   | (true, _) -> Error "left strand must not be empty"

@@ -1,12 +1,12 @@
-def to_rna(dna_strand):
-    complements = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
+def to_rna(dna_strand: str) -> str:
+    complements = {"G": "C", "C": "G", "T": "A", "A": "U"}
 
-    if dna_strand == '':
-        return ''
+    if dna_strand == "":
+        return ""
     elif len(dna_strand) == 1:
         return complements[dna_strand]
 
-    rna = ''
+    rna = ""
     for d in dna_strand:
         if complements[d]:
             rna += complements[d]

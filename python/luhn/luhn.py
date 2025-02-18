@@ -2,6 +2,8 @@ import re
 
 
 class Luhn:
+    card_num: str = ""
+
     def __init__(self, card_num: str):
         self.card_num = card_num
 

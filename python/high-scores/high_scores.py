@@ -1,5 +1,7 @@
-class HighScores():
-    def __init__(self, scores) -> None:
+class HighScores:
+    scores: list[int] = list()
+
+    def __init__(self, scores: list[int]) -> None:
         self.scores = scores
 
     def personal_best(self) -> int:

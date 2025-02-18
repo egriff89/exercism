@@ -9,7 +9,7 @@ def process_sentence(sentence: str) -> list[str]:
     return list(filter(lambda x: x != "", words))
 
 
-def count_words(sentence: str):
+def count_words(sentence: str) -> dict[str, int]:
     words = process_sentence(sentence)
 
     word_store: dict[str, int] = {}

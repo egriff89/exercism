@@ -10,10 +10,10 @@ pub enum Comparison {
 
 pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Comparison {
     fn check_superlist<T: PartialEq>(long_list: &[T], short_list: &[T]) -> bool {
-        return short_list.is_empty()
+        short_list.is_empty()
             || long_list
                 .windows(short_list.len())
-                .any(|window: &[T]| window == short_list);
+                .any(|window: &[T]| window == short_list)
     }
 
     match &_first_list.len().cmp(&_second_list.len()) {

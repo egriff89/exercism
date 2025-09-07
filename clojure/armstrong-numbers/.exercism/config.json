@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a number is an Armstrong number",
   "authors": [],
   "contributors": [
     "amscotti",
@@ -8,7 +7,9 @@
     "imtayadeway",
     "mawis",
     "mtkp",
-    "sjwarner-bp"
+    "sjwarner-bp",
+    "tasxatzial",
+    "erikschierboom"
   ],
   "files": {
     "solution": [
@@ -18,9 +19,10 @@
       "test/armstrong_numbers_test.clj"
     ],
     "example": [
-      ".meta/src/example.clj"
+      ".meta/example.clj"
     ]
   },
+  "blurb": "Determine if a number is an Armstrong number.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
 }

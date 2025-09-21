@@ -1,0 +1,1 @@
+These solutions, along with their tests, are slowly being ported over to [Hy](https://github.com/hylang/hy), a dialect of Lisp embedded in Python. Primarily a learning exercise, no real reason other than that.

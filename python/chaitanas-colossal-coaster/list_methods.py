@@ -31,9 +31,12 @@ def find_my_friend(queue: list[str], friend_name: str) -> int:
     :return: int - index at which the friends name was found.
     """
 
-    index = queue.index(friend_name)
-    if index is not None:
-        return index
+    try:
+        index = queue.index(friend_name)
+    except ValueError as valerr:
+        print(valerr)
+
+    return index
 
 
 def add_me_with_my_friends(queue: list[str], index: int, person_name: str) -> list[str]:

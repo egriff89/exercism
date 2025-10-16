@@ -1,0 +1,4 @@
+@test dir testfile:
+    #!/usr/bin/env bash
+    cd {{ dir }}
+    emacs -batch -l ert -l {{ testfile }} -f ert-run-tests-batch-and-exit

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HELP.html</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  /><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><style> body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; } </style><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script><script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script><script>document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('markdown-body'); document.querySelectorAll('pre[lang] > code').forEach((code) => { code.classList.add(code.parentElement.lang); }); document.querySelectorAll('pre > code').forEach((code) => { hljs.highlightBlock(code); }); });</script>
+</head>
+
+<body>
+
+<h1>Help</h1>
+
+<h2>Running the tests</h2>
+
+<p>Tests can be run several ways.</p>
+
+<h2>Interactively from within Emacs</h2>
+
+<ol>
+<li>Open test file, <code>M-x eval-buffer RET</code></li>
+<li>Interactively and individually, with <code>M-x ert RET test-name RET</code></li>
+<li>Interactively and all at once, with <code>M-x ert RET t RET</code>
+Note that this will run all tests currently loaded into Emacs!</li>
+<li>Rerun <code>M-x eval-buffer RET</code> before testing whenever you&rsquo;ve made changes</li>
+</ol>
+
+
+<p>To only execute the tests in the current buffer you can add this to your <code>.emacs</code> or <code>init.el</code>:</p>
+
+<p><code>elisp
+(defun my-eval-and-run-all-tests-in-buffer ()
+  "Deletes all loaded tests from the runtime, evaluates the current buffer and runs all loaded tests with ert."
+  (interactive)
+  (ert-delete-all-tests)
+  (eval-buffer)
+  (ert 't))
+</code></p>
+
+<p>After restarting Emacs:</p>
+
+<ol>
+<li>Open test file</li>
+<li><code>M-x my-eval-and-run-all-tests-in-buffer RET</code></li>
+</ol>
+
+
+<h2>From the terminal</h2>
+
+<p>To run run all tests from the terminal, in batch mode, execute <code>emacs -batch -l ert -l *-test.el -f ert-run-tests-batch-and-exit</code></p>
+
+<p>The above command is a bit unwieldy, so if you like:</p>
+
+<ol>
+<li>Create a file on your <code>$PATH</code> (probably in <code>~/bin</code>) called <code>ert-run</code></li>
+<li>The contents of the file should be as follows:
+```sh
+
+<h1>!/usr/bin/env sh</h1>
+
+<p>emacs -batch -l ert -l $1 -f ert-run-tests-batch-and-exit
+```</p></li>
+<li>Make the file executable with <code>chmod +x ert-run</code></li>
+</ol>
+
+
+<p>You should be able to simply call <code>ert-run *-test.el</code> and run the tests
+in batch mode.</p>
+
+<h2>Other options</h2>
+
+<p>Other options can be found in the docs, <code>C-h i m ert RET</code>.</p>
+
+<h2>Submitting your solution</h2>
+
+<p>You can submit your solution using the <code>exercism submit accumulate.el</code> command.
+This command will upload your solution to the Exercism website and print the solution page&rsquo;s URL.</p>
+
+<p>It&rsquo;s possible to submit an incomplete solution which allows you to:</p>
+
+<ul>
+<li>See how others have completed the exercise</li>
+<li>Request help from a mentor</li>
+</ul>
+
+
+<h2>Need to get help?</h2>
+
+<p>If you&rsquo;d like help solving the exercise, check the following pages:</p>
+
+<ul>
+<li>The <a href="https://exercism.org/docs/tracks/emacs-lisp">Emacs Lisp track&rsquo;s documentation</a></li>
+<li>The <a href="https://forum.exercism.org/c/programming/emacs-lisp">Emacs Lisp track&rsquo;s programming category on the forum</a></li>
+<li><a href="https://forum.exercism.org/c/programming/5">Exercism&rsquo;s programming category on the forum</a></li>
+<li>The <a href="https://exercism.org/docs/using/faqs">Frequently Asked Questions</a></li>
+</ul>
+
+
+<p>Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.</p>
+
+<p>To get help if you&rsquo;re having trouble, you can use one of the following resources:</p>
+
+<ul>
+<li><a href="http://emacswiki.org/">The Emacs Wiki</a> is invaluable. Spend lots of time here.</li>
+<li><a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">The Emacs Editor</a> is the official manual for GNU Emacs.</li>
+<li>IRC - there are <a href="https://libera.chat/">Libera.Chat</a> channels for <code>#emacs</code>, <code>#org-mode</code>, and many Emacs
+packages, and many helpful folks around. And with emacs, IRC is as close as
+<code>M-x erc</code>.</li>
+<li>Matrix - on <a href="https://matrix.org/">Matrix</a> there are rooms for <a href="https://matrix.to/#/#emacs:matrix.org">emacs</a>, <a href="https://matrix.to/#/#org-mode:matrix.org">org-mode</a>, and other Emacs packages.
+You can <a href="https://matrix.to/#/#emacs-space:matrix.org">join the Emacs Matrix space</a> to get an overview of the available channels.
+To join Matrix from within Emacs you can use the <a href="https://github.com/alphapapa/ement.el">Ement.el</a> package.</li>
+<li><a href="http://stackoverflow.com/questions/tagged/elisp">StackOverflow</a> and <a href="https://emacs.stackexchange.com/questions/tagged/elisp">Emacs StackExchange</a> can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.</li>
+</ul>
+
+
+</body>
+</html>

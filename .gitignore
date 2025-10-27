@@ -1,5 +1,6 @@
 # Config / cache
 .vscode/
+.zed/
 .clj-kondo/
 .lsp/
 __pycache__/

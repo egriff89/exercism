@@ -1,6 +1,12 @@
+(library
+ (name reverse_string)
+ (modules reverse_string)
+ (libraries base))
+
 (executable
  (name test)
- (libraries base ounit2))
+ (modules test)
+ (libraries base ounit2 reverse_string))
 
 (alias
   (name    runtest)

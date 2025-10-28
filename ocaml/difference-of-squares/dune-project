@@ -1,1 +1,5 @@
 (lang dune 1.1)
+
+(package
+ (name difference-of-squares)
+ (depends base ounit2))

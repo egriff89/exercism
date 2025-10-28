@@ -1,6 +1,12 @@
+(library
+ (name difference_of_squares)
+ (modules difference_of_squares)
+ (libraries base))
+
 (executable
  (name test)
- (libraries base ounit2))
+ (modules test)
+ (libraries base ounit2 difference_of_squares))
 
 (alias
   (name    runtest)

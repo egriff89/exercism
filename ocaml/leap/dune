@@ -1,6 +1,12 @@
+(library
+ (name leap)
+ (modules leap)
+ (libraries base))
+
 (executable
  (name test)
- (libraries base ounit2))
+ (modules test)
+ (libraries base ounit2 leap))
 
 (alias
   (name    runtest)

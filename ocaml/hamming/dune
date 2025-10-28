@@ -1,6 +1,12 @@
+(library
+ (name hamming)
+ (modules hamming)
+ (libraries base))
+
 (executable
  (name test)
- (libraries base ounit2))
+ (modules test)
+ (libraries base ounit2 hamming))
 
 (alias
   (name    runtest)

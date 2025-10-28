@@ -1,6 +1,12 @@
+(library
+ (name raindrops)
+ (modules raindrops)
+ (libraries base))
+
 (executable
  (name test)
- (libraries base ounit2))
+ (modules test)
+ (libraries base ounit2 raindrops))
 
 (alias
   (name    runtest)

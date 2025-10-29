@@ -11,10 +11,10 @@ All of the exercises use `ounit2` for testing and `base` instead of the standard
 ```dune
 (package
  (name exercise-name)
- (dependencies base ounit2))
+ (depends base ounit2))
 ```
 
-### Modify top of `dune` file looks like this:
+### Modify top of the `dune` file to match this:
 ```dune
 (library
  (name exercise_name)

@@ -1,0 +1,22 @@
+(library
+ (name nucleotide_count)
+ (modules nucleotide_count)
+ (libraries base))
+
+(executable
+ (name test)
+ (modules test)
+ (libraries base ounit2 nucleotide_count))
+
+(rule
+ (alias runtest)
+ (action (run ./test.exe)))
+
+(rule
+ (alias buildtest)
+ (action (run ./test.exe)))
+
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))

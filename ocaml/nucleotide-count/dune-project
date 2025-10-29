@@ -1,0 +1,5 @@
+(lang dune 2.0)
+
+(package
+ (name nucleotide-count)
+ (depends base ounit2))

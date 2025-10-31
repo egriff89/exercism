@@ -1,0 +1,5 @@
+(lang dune 1.1)
+
+(package
+  (name two-fer)
+  (depends ounit2))

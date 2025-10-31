@@ -1,0 +1,21 @@
+(library
+  (name two_fer)
+  (modules two_fer))
+
+(executable
+ (name test)
+ (modules test)
+ (libraries base ounit2 two_fer))
+
+(alias
+  (name    runtest)
+  (deps    (:x test.exe))
+  (action  (run %{x})))
+
+(alias
+  (name    buildtest)
+  (deps    (:x test.exe)))
+
+(env
+  (dev
+    (flags (:standard -warn-error -A))))

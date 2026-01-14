@@ -1,0 +1,7 @@
+# OCaml build artifacts
+**/_build/
+dist/
+**/dune.lock/
+
+# Merlin editor support
+.merlin

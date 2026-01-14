@@ -1,12 +1,10 @@
-# Config / cache
+# Editors
 .vscode/
 .zed/
+
+# Cache/build artifacts
 .clj-kondo/
 .lsp/
-__pycache__/
 .pytest_cache/
+__pycache__/
 node_modules/
-**/_build
-
-# Executables
-*.exe

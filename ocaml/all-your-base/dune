@@ -1,0 +1,22 @@
+(library
+ (name all_your_base)
+ (modules all_your_base)
+ (libraries base))
+
+(executable
+ (name test)
+ (modules test)
+ (libraries base ounit2 all_your_base))
+
+(alias
+  (name    runtest)
+  (deps    (:x test.exe))
+  (action  (run %{x})))
+
+(alias
+  (name    buildtest)
+  (deps    (:x test.exe)))
+
+(env
+  (dev
+    (flags (:standard -warn-error -A))))

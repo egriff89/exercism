@@ -1,13 +1,18 @@
 ## Getting the LSP to acknowledge libraries
 
-All of the exercises use `ounit2` for testing and `base` instead of the standard library. The LSP won't be able to find any installed packages unless you add extra stanzas to the `dune-project` and `dune` files for each exercise. You can create a local switch for each exercise, but I'd recommend just using the default global one to conserve disk space.
+All of the exercises use `ounit2` for testing and some of the exercises use `base` instead of the standard library. The LSP won't be able to find any installed packages unless you add extra stanzas to the `dune-project` and `dune` files for each exercise. You can create a local switch for each exercise, but I'd recommend just using the default global one to conserve disk space.
 
 ### Install these packages with opam:
+
 - `ocaml-lsp-server`
 - `base`
 - `ounit2`
 
+> `base` is only required if the exercise opens it in the main file by default. There's
+> no harm in adding it to the `dune` and `dune-project` files without using it though.
+
 ### Append the following to the end of `dune-project`:
+
 ```dune
 (package
  (name exercise-name)
@@ -15,6 +20,7 @@ All of the exercises use `ounit2` for testing and `base` instead of the standard
 ```
 
 ### Modify top of the `dune` file to match this:
+
 ```dune
 (library
  (name exercise_name)
@@ -30,11 +36,13 @@ All of the exercises use `ounit2` for testing and `base` instead of the standard
 ```
 
 ### Build and run tests to generate starting "config" for the LSP:
+
 ```bash
 make && dune build
 ```
 
 ### Restart the LSP
+
 - Zed: `Ctrl+Shift+P > editor:restart language server`
 - VSCode: `Ctrl+Shift+P > OCaml:Restart Language Server`
 - Neovim: `:LspRestart`

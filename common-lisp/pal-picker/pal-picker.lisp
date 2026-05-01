@@ -23,15 +23,15 @@
 
 (defun feeding-time-p (fullness)
   (if (> fullness 20)
-    "All is well."
-    "It's feeding time!"))
+      "All is well."
+      "It's feeding time!"))
 
 (defun pet (pet)
   (if (string= pet "Fish")
-    "Maybe not with this pet..."
-    nil))
+      "Maybe not with this pet..."
+      nil))
 
 (defun play-fetch (pet)
   (if (string= pet "Dog")
-    nil
-    "Maybe not with this pet..."))
+      nil
+      "Maybe not with this pet..."))
